@@ -1,0 +1,35 @@
+source:
+  mode: local
+  local_file: sample_data/employee_locations_sample.xlsx
+  worksheet: Employees
+  sharepoint:
+    tenant_id_env: SHAREPOINT_TENANT_ID
+    client_id_env: SHAREPOINT_CLIENT_ID
+    client_secret_env: SHAREPOINT_CLIENT_SECRET
+    site_hostname: contoso.sharepoint.com
+    site_path: sites/PeopleAnalytics
+    site_id_env: SHAREPOINT_SITE_ID
+    drive_id_env: SHAREPOINT_DRIVE_ID
+    file_path: Shared Documents/People Analytics/employee_locations.xlsx
+    share_url: ""
+
+storage:
+  database_url_env: DATABASE_URL
+  sqlite_file: output/employee_locations.db
+  schema: analytics
+  target_table: employee_location_snapshot
+  staging_table: employee_location_staging
+  audit_table: employee_location_load_audit
+
+pipeline:
+  output_directory: output
+  lock_file: output/employee_location_pipeline.lock
+  fail_on_missing_coordinates: false
+
+branches:
+  HEADQUARTERS:
+    latitude: -23.5505
+    longitude: -46.6333
+  REGIONAL_OFFICE:
+    latitude: -15.6014
+    longitude: -56.0979
