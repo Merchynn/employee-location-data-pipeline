@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+config.yaml
+*.pem
+*.key
+*credentials*.json
+
+# Runtime data and logs
+output/
+data/
+logs/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.part
+*.lock
+
+# Real employee or BI files
+*.pbix
+*.pbit
+*.pbip
+*.SemanticModel.zip
+*.Report.zip
+*.csv
+*.xlsx
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
